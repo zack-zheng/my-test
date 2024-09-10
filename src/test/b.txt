@@ -1,0 +1,35 @@
+{
+  "schemeUuid": "E3E9A72E-09DC-33F7-E053-0B15D70A5BE2",
+  "tabCode": "SCT-DIS",
+  "effDate": "20/10/2022",
+
+  "contactPersonDto": {
+    "id": "E3E9A72E-09E0-33F7-E053-0B15D70A5BE2",
+    "clientUuid": "clientuuid2233",
+    "firstName": "firstName",
+    "lastName": "lastName",
+    "firstnameZhhk": "firstnameZhhk",
+    "lastnameZhhk": "lastnameZhhk",
+    "hotline": {
+      "id": "E3E9A72E-09E0-33F7-E053-0B15D70A5BE2",
+      "phoneCountryCallingCode": "+86",
+      "phoneNo": "phoneNo",
+      "avPhoneTypeCode": "avPhoneTypeCode"
+    },
+    "faxNo": {
+      "id": "E3E9A72E-09E0-33F7-E053-0B15D70A5BE2",
+      "phoneCountryCallingCode": "+86",
+      "phoneNo": "phoneNo",
+      "avPhoneTypeCode": "avPhoneTypeCode"
+    },
+    "emailDto": {
+      "id": "E3E9A72E-09E0-33F7-E053-0B15D70A5BE2",
+      "emailAddress": "chantainman@abc.com"
+    },
+    "hotlineServiceHour": "hotlineServiceHour",
+    "effDate": "20/10/2022",
+    "avContactPersonType": "PRIMARY_CONTACT",
+    "avNameTitleCode": "MR",
+    "isDelete": true,
+    "isAdd": true
+  }}

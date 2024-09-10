@@ -1,0 +1,35 @@
+{
+    "schemeUuid": "E3E9A72E-09E0-33F7-E053-0B15D70A5BE2",
+    "effDate": "12/11/2023",
+    "tabCode": "SCT_CONTACT_DTL",
+    "contactPersonDto": {
+            "id": "669263fd-68dd-469c-847b-31c51e28e09d",
+            "firstName": "T_Chan",
+            "lastName": "Tai Man1111",
+            "firstnameZhhk": "大文",
+            "lastnameZhhk": "陈",
+            "hotline": {
+                "id": "65c29908-b8b5-452a-bff3-676079407e25",
+                "phoneNo": 161111,
+                "phoneCountryCallingCode": "852",
+                "avPhoneTypeCode": "PHONE"
+            },
+            "faxNo": {
+                "id": "c3a6d4a5-77b4-48d4-8bca-c80ca3c9a0e2",
+                "phoneNo": 153333,
+                "phoneCountryCallingCode": null,
+                "avPhoneTypeCode": "FAX"
+            },
+            "emailDto": {
+                "id": "fc014aea-6609-4a4f-bac5-a8c50c24ed31",
+                "emailAddr": "chantaiman@1111.com"
+            },
+            "hotlineServiceHour": "9:00 AM - 6:00 PM(Mon-Fri)",
+            "avContactPersonType": "PRIMARY_CONTACT",
+            "effDate": "10/11/2023",
+            "clientUuid": null,
+            "avNameTitleCode": "MS",
+            "isDelete": null,
+            "isAdd": null
+        }
+}
