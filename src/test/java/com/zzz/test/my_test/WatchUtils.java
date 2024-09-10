@@ -13,10 +13,15 @@ public class WatchUtils {
     private final static List<String> FILE_SUF = Arrays.asList("Lk1QNA==", "LkdJRg==", "Lk1PVg==", "LnJtdmI=", "LmF2aQ==", "Lm0zdTg=");
 
     public static void main(String[] args) {
-//        mainProc(code,true);
-        mainProc(code, false);
+        mainProc(code,true);
+//        mainProc(code, false);
     }
 
+    @Test
+    public void test1(){
+        String a = new String(Base64.decodeBase64(code));
+        System.out.println(a);
+    }
 
     public static void mainProc(String code, boolean needMatch) {
         File outer = new File(new String(Base64.decodeBase64(code)));

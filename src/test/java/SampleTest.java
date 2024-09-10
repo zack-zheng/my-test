@@ -7,7 +7,9 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.junit.Test;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -37,6 +39,25 @@ public class SampleTest {
 
     @Test
     public void test_1() {
+        String filePath = "C:\\Users\\zheng\\OneDrive\\文档\\vscode\\Untitled-1.json"; // 替换为实际文件路径
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            StringBuilder content = new StringBuilder();
+            String line;
+            while ((line = reader.readLine())!= null) {
+                content.append(line);
+            }
+
+            JSONArray jsonArray = JSONArray.parseArray(content.toString());
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JSONObject object = jsonArray.getJSONObject(i);
+                if (object.containsKey("name")) {
+                    System.out.println(object.getString("name"));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -305,7 +326,7 @@ public class SampleTest {
 
     @Test
     public void test_15() {
-
+        System.out.println(new String(Base64.getDecoder().decode("RTpcQXV0b0NBRF8yMDE4X3g2NF9MaXRlX0xpYnJhcnlcNzVhNjg4YWFlNGRlNDE2ZWFjZGRiYzY3NmNiYWQ5Zjk=")));
     }
 
     @Test
