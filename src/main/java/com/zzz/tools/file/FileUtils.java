@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * File Utils
@@ -50,14 +51,18 @@ public class FileUtils {
         throw new AssertionError();
     }
 
-    /**
-     * read file
-     *
-     * @param filePath
-     * @param charsetName The name of a supported {@link java.nio.charset.Charset </code>charset<code>}
-     * @return if file not exist, return null, else return content of file
-     * @throws RuntimeException if an error occurs while operator BufferedReader
-     */
+    public static String readFile(String filePath) {
+        return Objects.requireNonNull(readFile(filePath, "utf-8")).toString();
+    }
+
+        /**
+         * read file
+         *
+         * @param filePath
+         * @param charsetName The name of a supported {@link java.nio.charset.Charset </code>charset<code>}
+         * @return if file not exist, return null, else return content of file
+         * @throws RuntimeException if an error occurs while operator BufferedReader
+         */
     public static StringBuilder readFile(String filePath, String charsetName) {
         File file = new File(filePath);
         StringBuilder fileContent = new StringBuilder("");
