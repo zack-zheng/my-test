@@ -15,11 +15,11 @@ public class ExamSimulator {
     private static String userId = "";
 
     //正确率
-    private static int rightP = 90;
+    private static int rightP = 85;
 
     public static void main(String[] args) throws Exception {
         //杨丽纯
-        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTm8iOiIyMDIzMDIwMjE4MTgzMjcwMDk5IiwiaXNzIjoiUk9OQ09PIiwiZXhwIjoxNzI4MTM0ODYxfQ.Z-iaLmcMMPj4qtnvYM1s9N8He19UXOh0pE-afgEc0wQ\n";
+        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTm8iOiIyMDIzMDIwMjE4MTgzMjcwMDk5IiwiaXNzIjoiUk9OQ09PIiwiZXhwIjoxNzMzMjI5NzYyfQ.zIucCd7euo9-VSAyiMRSpObtD9__drUnadjXhDVpYRQ\n";
         userId = "2023020218183270099";
         考试();
 
@@ -66,7 +66,7 @@ public class ExamSimulator {
     }
 
     private static String getJson() {
-        String json = FileUtils.readFile("E:\\dev\\my-test\\src\\test\\java\\com\\zzz\\test\\my_test\\exam\\法律法规题库.txt", "utf-8").toString();
+        String json = FileUtils.readFile("D:\\IDEA DEV\\my-test\\src\\test\\java\\com\\zzz\\test\\my_test\\exam\\法律法规题库.txt", "utf-8").toString();
         AuditRequest dto = new AuditRequest();
         JSONArray jsonArray = JSONArray.parseArray(json);
         dto.setTime(jsonArray.size() * 15);

@@ -1,15 +1,12 @@
 package com.zzz.basic.encrypt;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Base64;
 
 /**
  * AES加解密工具类
@@ -52,10 +49,8 @@ public class AESUtil {
             //9.根据密码器的初始化方式--加密：将数据加密
             byte[] byte_AES = cipher.doFinal(byte_encode);
             //10.将加密后的数据转换为字符串
-            //这里用Base64Encoder中会找不到包
-            //解决办法：
-            //在项目的Build path中先移除JRE System Library，再添加库JRE System Library，重新编译后就一切正常了。
-            String AES_encode = new String(new BASE64Encoder().encode(byte_AES));
+            //使用标准的java.util.Base64替代sun.misc.BASE64Encoder
+            String AES_encode = Base64.getEncoder().encodeToString(byte_AES);
             //11.将字符串返回
             return AES_encode;
         } catch (NoSuchAlgorithmException e) {
@@ -102,7 +97,7 @@ public class AESUtil {
             //7.初始化密码器，第一个参数为加密(Encrypt_mode)或者解密(Decrypt_mode)操作，第二个参数为使用的KEY
             cipher.init(Cipher.DECRYPT_MODE, key);
             //8.将加密并编码后的内容解码成字节数组
-            byte[] byte_content = new BASE64Decoder().decodeBuffer(content);
+            byte[] byte_content = Base64.getDecoder().decode(content);
             /*
              * 解密
              */
@@ -115,7 +110,7 @@ public class AESUtil {
             e.printStackTrace();
         } catch (InvalidKeyException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IllegalBlockSizeException e) {
             throw new RuntimeException("兄弟，配置文件中的密码需要使用AES加密，请使用com.zheng.common.util.AESUtil工具类修改这些值！");

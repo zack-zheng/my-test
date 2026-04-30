@@ -2,9 +2,7 @@ package com.zzz.basic.encrypt.base64;
 
 
 import java.math.BigInteger;  
-  
-import sun.misc.BASE64Decoder;  
-import sun.misc.BASE64Encoder;  
+import java.util.Base64;  
   
   
 /** 
@@ -43,7 +41,7 @@ public class QEncodeUtil {
      * @return 编码后的base 64 code 
      */  
     public static String base64Encode(byte[] bytes){  
-        return new BASE64Encoder().encode(bytes);  
+        return Base64.getEncoder().encodeToString(bytes);  
     }  
       
     /** 
@@ -53,7 +51,7 @@ public class QEncodeUtil {
      * @throws Exception 
      */  
     public static byte[] base64Decode(String base64Code) throws Exception{  
-        return base64Code.isEmpty() ? null : new BASE64Decoder().decodeBuffer(base64Code);  
+        return base64Code.isEmpty() ? null : Base64.getDecoder().decode(base64Code);  
     }  
       
 }  

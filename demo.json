@@ -1,0 +1,82 @@
+{
+  "metaData": {
+    "caseNo": "100200",
+    "inputter": "inputter1",
+    "type": "reg",
+    "subType": "",
+    "round": 0,
+    "ddeType": "form"
+  },
+  "formContent": {
+    "trusteeId": "8F756DF2AC5A45E8AD2741E5C1586AB4",
+    "trusteeDetailsDto": {
+      "trusteeInformationDto": {
+        "trusteeCode": "AIA",
+        "trusteeNameEng": "AIA Company (Trustee) Limited",
+        "trusteeNameChi": "友邦信托有限公司",
+        "trusteeApprovalNumber": "TC00073",
+        "facsimileNumber": 10086,
+        "trusteeStatus": "success",
+        "effectiveDate": "Nov 8, 2022, 10:57:38 AM",
+        "trusteeApprovalDate": "Nov 8, 2022, 10:57:38 AM",
+        "trusteeDisapprovalDate": "TrusteeDisapprovalDate",
+        "PhoneDtoList": [
+          {
+            "countryCode": "86",
+            "telephone": "13110011000"
+          }
+        ]
+      },
+      "regisAddrDto": {
+        "room": "710",
+        "floor": "7",
+        "block": "10",
+        "building": "DEF Building",
+        "street": "1 DEF Road",
+        "districtArea": "Kowloon",
+        "country": "CN"
+      },
+      "correspondenceAddrDto": {
+        "city": "HK",
+        "postalCode": "000",
+        "effectiveDate": "Nov 8, 2022, 10:57:38 AM",
+        "room": "710",
+        "floor": "7",
+        "block": "10",
+        "building": "DEF Building",
+        "street": "1 DEF Road",
+        "districtArea": "Kowloon",
+        "country": "CN"
+      }
+    },
+    "trusteeBankDetailsDto": {
+      "bankInformationDto": {
+        "bankName": "10086",
+        "bankCode": "10086",
+        "branchCode": "10086",
+        "bankAcctNo": 10086,
+        "swiftCode": "10086",
+        "payeeName": "10086",
+        "effDate": "Nov 8, 2022, 10:57:38 AM"
+      },
+      "payeeAddressDto": {
+        "room": "710",
+        "floor": "7",
+        "block": "10",
+        "building": "DEF Building",
+        "street": "1 DEF Road",
+        "districtArea": "Kowloon",
+        "country": "CN"
+      },
+      "intermediaryBankDto": {
+        "bankName": "10086",
+        "bankCode": "10086",
+        "branchCode": "10086",
+        "bankAcctNo": 10086,
+        "swiftCode": "10086",
+        "payeeName": "10086",
+        "effDate": "Nov 8, 2022, 10:57:38 AM"
+      }
+    }
+  }
+}

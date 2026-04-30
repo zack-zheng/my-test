@@ -3,6 +3,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.zzz.tools.file.FileUtils;
 import lombok.Data;
 import okhttp3.*;
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.junit.Test;
@@ -186,11 +187,12 @@ public class SampleTest {
 
     @Test
     public void test_9() throws Exception {
-        PDDocument pdDocument = PDDocument.load(new File("C:\\Users\\zheng\\Desktop\\历史备查\\面试专题\\JAVA核心知识点整理.pdf"));
+        File pdfFile = new File("C:\\Users\\zheng\\Desktop\\历史备查\\面试专题\\JAVA核心知识点整理.pdf");
+        PDDocument pdDocument = Loader.loadPDF(pdfFile);
         PDFTextStripper stripper = new PDFTextStripper();
         String pdfText = stripper.getText(pdDocument);
         System.out.println(pdfText);
-
+        pdDocument.close();
     }
 
     @Test
@@ -263,7 +265,7 @@ public class SampleTest {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json;charset=UTF-8");
-        RequestBody body = RequestBody.create(mediaType, getJson());
+        RequestBody body = RequestBody.create(getJson(), mediaType);
         Request request = new Request.Builder()
                 .url("http://api.edu.sjysz.com/api/exam/auth/test/audit")
                 .method("POST", body)
@@ -301,7 +303,7 @@ public class SampleTest {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json;charset=UTF-8");
-        RequestBody body = RequestBody.create(mediaType, "{\"testIds\":[],\"type\":\"2\",\"categoryId\":\"1253246255115538434\",\"page\":1,\"v\":1682006693828,\"userNo\":\"2022022309501471622\",\"userExtNo\":\"2022022309501471622\"}");
+        RequestBody body = RequestBody.create("{\"testIds\":[],\"type\":\"2\",\"categoryId\":\"1253246255115538434\",\"page\":1,\"v\":1682006693828,\"userNo\":\"2022022309501471622\",\"userExtNo\":\"2022022309501471622\"}", mediaType);
         Request request = new Request.Builder()
                 .url("http://api.edu.sjysz.com/api/exam/auth/test/randomTest")
                 .method("POST", body)
@@ -331,9 +333,38 @@ public class SampleTest {
 
     @Test
     public void test_16() {
+        //列出指定文件夹中所有文件和大小
+        final  String code = "RzpcQXV0b0NBRF8yMDE4X3g2NF9MaXRlX0xpYnJhcnlcNzVhNjg4YWFlNGRlNDE2ZWFjZGRiYzY3NmNiYWQ5Zjk=";
+        // 指定要遍历的目录
+        String a = new String(org.apache.commons.codec.binary.Base64.decodeBase64(code));
+        File directory = new File(a);
 
+        // 检查目录是否存在
+        if (directory.exists() && directory.isDirectory()) {
+            // 开始递归遍历
+            printFileSizes(directory);
+        } else {
+            System.out.println("指定的路径不是有效的目录。");
+        }
     }
+    // 递归方法
+    public static void printFileSizes(File directory) {
+        // 获取目录中的所有文件和子目录
+        File[] files = directory.listFiles();
 
+        if (files != null) {
+            for (File file : files) {
+                // 如果是文件，打印文件名和大小
+                if (file.isFile()) {
+                    System.out.println(file.getName() + "\t" + file.length() );
+                }
+                // 如果是目录，递归调用
+                else if (file.isDirectory()) {
+                    printFileSizes(file);
+                }
+            }
+        }
+    }
     @Test
     public void test_17() {
 
