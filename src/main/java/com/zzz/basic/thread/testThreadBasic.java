@@ -97,7 +97,7 @@ class testInterrupt2   {
         testInterrupt1 r = new testInterrupt1();
         r.start();
         try {
-            r.sleep(3000);
+            Thread.sleep(3000);
             Thread.sleep(4000);//为什么这两个的效果是一样的   有什么区别？
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -111,7 +111,7 @@ class testInterrupt3 implements Runnable   {
         Thread t = new Thread(r);
         t.start();
         try {
-            t.sleep(3000);
+            Thread.sleep(3000);
             Thread.sleep(4000);//为什么这两个的效果是一样的   有什么区别？
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -176,7 +176,7 @@ class testYield extends Thread {
         for (int i = 1; i<= 100;i++){
             System.out.println(getName()+ ": "+i);
             if (i%10 == 0 ){
-                yield();
+                Thread.yield();
             }
         }
     }

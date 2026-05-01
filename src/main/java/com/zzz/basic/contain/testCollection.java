@@ -16,7 +16,7 @@ public class testCollection {
         c.add("hello");
         c.add("hello");
         c.add(new Name("f1", "l1"));
-        c.add(new Integer(100));
+        c.add(Integer.valueOf(100));
         System.out.println(c.size());
         System.out.println(c);
     }
@@ -59,7 +59,7 @@ public class testCollection {
         s.add("world");
         s.add("hello");
         s.add(new Name("f1", "f2"));
-        s.add(new Integer(100));
+        s.add(Integer.valueOf(100));
         s.add(new Name("f1", "f2"));
         s.add("hello");
         System.out.println(s);
@@ -137,14 +137,14 @@ public class testCollection {
     public void testMap() {
         Map m1 = new HashMap();
         Map m2 = new TreeMap();
-        m1.put("one", new Integer(1));//jdk1.5之前要new一个对象put进去
-        m1.put("two", new Integer(2));//现在如testMapAutoboxing方法
-        m1.put("three", new Integer(3));
-        m2.put("A", new Integer(1));
-        m2.put("B", new Integer(2));
+        m1.put("one", Integer.valueOf(1));//jdk1.5之前要new一个对象put进去
+        m1.put("two", Integer.valueOf(2));//现在如testMapAutoboxing方法
+        m1.put("three", Integer.valueOf(3));
+        m2.put("A", Integer.valueOf(1));
+        m2.put("B", Integer.valueOf(2));
         System.out.println(m1.size());
         System.out.println(m1.containsKey("one"));
-        System.out.println(m2.containsValue(new Integer(1)));
+        System.out.println(m2.containsValue(Integer.valueOf(1)));
         if (m1.containsKey("two")) {
             int i = ((Integer) m1.get("two")).intValue();
             System.out.println(i);

@@ -153,7 +153,7 @@ public class SynchronizationComparisons {
   public static void main(String[] args) {
     int iterations = 5; // Default
     if(args.length > 0) // Optionally change iterations
-      iterations = new Integer(args[0]);
+      iterations = Integer.valueOf(args[0]);
     // The first time fills the thread pool:
     print("Warmup");
     baseLine.timedTest();

@@ -11,7 +11,7 @@ public class VarArgs {
   }
   public static void main(String[] args) {
     printArray(new Object[]{
-      new Integer(47), new Float(3.14), new Double(11.11)
+      Integer.valueOf(47), Float.valueOf(3.14f), Double.valueOf(11.11)
     });
     printArray(new Object[]{"one", "two", "three" });
     printArray(new Object[]{new A(), new A(), new A()});

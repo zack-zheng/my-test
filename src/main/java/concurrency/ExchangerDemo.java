@@ -56,9 +56,9 @@ public class ExchangerDemo {
   static int delay = 5; // Seconds
   public static void main(String[] args) throws Exception {
     if(args.length > 0)
-      size = new Integer(args[0]);
+      size = Integer.valueOf(args[0]);
     if(args.length > 1)
-      delay = new Integer(args[1]);
+      delay = Integer.valueOf(args[1]);
     ExecutorService exec = Executors.newCachedThreadPool();
     Exchanger<List<Fat>> xc = new Exchanger<List<Fat>>();
     List<Fat>

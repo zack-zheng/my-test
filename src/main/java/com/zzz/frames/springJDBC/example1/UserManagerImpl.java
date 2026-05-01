@@ -51,7 +51,7 @@ public class UserManagerImpl implements UserManager {
 		 * new Object[] {name};
 		 */
 		String sql = "update t_test set name=? where id=?";
-		Object[] params = new Object[] { name, new Integer(id) };
+		Object[] params = new Object[] { name, Integer.valueOf(id) };
 		dao.update(sql, params);
 	}
 

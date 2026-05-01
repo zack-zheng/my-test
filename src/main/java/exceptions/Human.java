@@ -5,6 +5,7 @@ class Annoyance extends Exception {}
 class Sneeze extends Annoyance {}
 
 public class Human {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     // Catch the exact type:
     try {

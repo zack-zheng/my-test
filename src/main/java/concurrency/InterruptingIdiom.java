@@ -58,7 +58,7 @@ public class InterruptingIdiom {
     }
     Thread t = new Thread(new Blocked3());
     t.start();
-    TimeUnit.MILLISECONDS.sleep(new Integer(args[0]));
+    TimeUnit.MILLISECONDS.sleep(Integer.valueOf(args[0]));
     t.interrupt();
   }
 } /* Output: (Sample)

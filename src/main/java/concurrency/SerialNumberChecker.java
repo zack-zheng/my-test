@@ -53,7 +53,7 @@ public class SerialNumberChecker {
       exec.execute(new SerialChecker());
     // Stop after n seconds if there's an argument:
     if(args.length > 0) {
-      TimeUnit.SECONDS.sleep(new Integer(args[0]));
+      TimeUnit.SECONDS.sleep(Integer.valueOf(args[0]));
       System.out.println("No duplicates detected");
       System.exit(0);
     }

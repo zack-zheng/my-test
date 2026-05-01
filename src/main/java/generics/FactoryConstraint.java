@@ -14,7 +14,7 @@ class Foo2<T> {
 
 class IntegerFactory implements FactoryI<Integer> {
   public Integer create() {
-    return new Integer(0);
+    return Integer.valueOf(0);
   }
 }	
 

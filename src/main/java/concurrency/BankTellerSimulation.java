@@ -177,7 +177,7 @@ public class BankTellerSimulation {
     exec.execute(new TellerManager(
       exec, customers, ADJUSTMENT_PERIOD));
     if(args.length > 0) // Optional argument
-      TimeUnit.SECONDS.sleep(new Integer(args[0]));
+      TimeUnit.SECONDS.sleep(Integer.valueOf(args[0]));
     else {
       System.out.println("Press 'Enter' to quit");
       System.in.read();

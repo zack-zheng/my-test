@@ -7,9 +7,9 @@ public class AutoboxingVarargs {
     System.out.println();
   }
   public static void main(String[] args) {
-    f(new Integer(1), new Integer(2));
+    f(Integer.valueOf(1), Integer.valueOf(2));
     f(4, 5, 6, 7, 8, 9);
-    f(10, new Integer(11), 12);
+    f(10, Integer.valueOf(11), 12);
   }
 } /* Output:
 1 2
